@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Recipe } from '../../models/recipe';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-recipe-card',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeCardComponent implements OnInit {
 
+  @Input() recipe: Recipe;
+
+  defaultImage = 'assets/img/cooking-pot-icon.jpg'
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  getImagen(): String {
+
+    if (isNullOrUndefined(this.recipe.thumbnail) || this.recipe.thumbnail.trim.length === 0) {
+      return this.defaultImage;
+    } else {
+      return this.recipe.thumbnail
+    }
+
+  } 
+
 
 }

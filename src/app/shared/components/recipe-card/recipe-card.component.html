@@ -1,3 +1,14 @@
-<p>
-  recipe-card works!
-</p>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img [src]="getImagen()" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{recipe.title}}</h5>
+          <p class="card-text">{{recipe.ingredients}}</p>
+          <a [href]="recipe.href" class="btn btn-primary">Ver Receta</a>
+        </div>
+      </div>
+    </div>
+  </div>

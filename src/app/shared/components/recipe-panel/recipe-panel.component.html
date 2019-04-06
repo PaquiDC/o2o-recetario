@@ -1,3 +1,15 @@
-<p>
-  recipe-panel works!
-</p>
+<div *ngIf="recipes.length === 0" class="pt-3 text-center">
+    <h4>Recipe not found</h4>
+</div>
+
+<div *ngFor="let recipe of recipes">
+
+    <app-recipe-card recipe="recipe"></app-recipe-card>
+
+</div>
+
+<div *ngIf="isSearching" class="d-flex justify-content-center">
+    <div class="spinner-border text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>

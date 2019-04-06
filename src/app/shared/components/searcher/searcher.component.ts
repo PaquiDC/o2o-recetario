@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-searcher',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearcherComponent implements OnInit {
 
+  recipeQuery: String = ''
+
+  @Output() emit = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+
+ 
   }
 
 }
