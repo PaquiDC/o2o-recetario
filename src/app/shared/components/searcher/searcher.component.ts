@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-searcher',
@@ -8,21 +7,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class SearcherComponent implements OnInit {
 
-  recipeSearchGroup = new FormGroup({
-    recipeQuery: new FormControl('')
-  });
-
-
-  @Output() emit = new EventEmitter();
+  @Output() inputQuery = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmit() {
-    console.log('HOLAAA')
+  onSubmit(event) {
+    this.inputQuery.emit(event);
   }
-
-
 }

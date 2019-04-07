@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   query: String;
   recipes: Recipe[];
+  defaultQuery = 'spanish omelet';
 
   constructor(private recipeService: RecipeService) {
     
@@ -19,13 +20,21 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.recipeService.findByQuery('brocoli')
+    this.recipeService.findByQuery(this.defaultQuery)
     .then((resp: RecipesResp) => {
-      console.info(resp);
       this.recipes = resp.results;
     })
     .catch(err => console.log(err));
 
+  }
+
+
+  inputRecipe(recipeQuery: string) {
+    this.recipeService.findByQuery(recipeQuery)
+    .then((resp: RecipesResp) => {
+      this.recipes = resp.results;
+    })
+    .catch(err => console.log(err));
   }
 
 }
