@@ -1,16 +1,9 @@
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img [src]="getImagen()" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{recipe.title}}</h5>
-          <p class="card-text"><strong>Ingredients: </strong>{{recipe.ingredients}}</p>
-        </div>
-        <div class="card-body">
-            <a [href]="goToLink(recipe.href)" class="card-link">Show recipe</a>
-          </div>
-      </div>
-    </div>
-  </div>
+
+<img [src]="getImagen()" class="card-img-top" alt="...">
+<div class="card-body">
+  <h5 class="card-title">{{recipe.title}}</h5>
+  <p class="card-text"><strong>Ingredients: </strong>{{recipe.ingredients}}</p>
+</div>
+<div class="card-footer">
+    <a (click)="goToLink(recipe.href)" class="card-link">Show recipe</a>
+</div>
