@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Recipe } from '../../models/recipe';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-recipe-panel',
@@ -48,7 +49,7 @@ export class RecipePanelComponent implements OnInit, OnChanges {
     ingredients: 'lechuga, tomate',
     thumbnail: '',
     href: '#'
-  }];
+  }] as Recipe[];
 
   isSearching: boolean = false;
 
@@ -57,7 +58,11 @@ export class RecipePanelComponent implements OnInit, OnChanges {
   ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    throw new Error("Method not implemented.");
+    console.log(changes);
+  }
+
+  areThereRecipes(): boolean {
+    return isNullOrUndefined(this.recipes) || this.recipes.length === 0;
   }
 
 

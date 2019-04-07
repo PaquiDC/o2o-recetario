@@ -20,13 +20,17 @@ export class RecipeCardComponent implements OnInit {
 
   getImagen(): String {
 
-    if (isNullOrUndefined(this.recipe.thumbnail) || this.recipe.thumbnail.trim.length === 0) {
+    if (isNullOrUndefined(this.recipe.thumbnail) || this.recipe.thumbnail.trim().length === 0) {
       return this.defaultImage;
     } else {
-      return this.recipe.thumbnail
+      return this.recipe.thumbnail;
     }
 
   } 
+
+  goToLink(url: string){
+    window.open(url, "_blank");
+}
 
 
 }

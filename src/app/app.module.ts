@@ -7,6 +7,7 @@ import { SearcherComponent } from './shared/components/searcher/searcher.compone
 import { RecipePanelComponent } from './shared/components/recipe-panel/recipe-panel.component';
 import { RecipeCardComponent } from './shared/components/recipe-card/recipe-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [],

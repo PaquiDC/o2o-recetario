@@ -1,25 +1,24 @@
+<header class="text-center">
+  <img src="assets/img/cooking-pot-icon.jpg" class="rounded" alt="...">
+  <h1 class="pt-2">El recetario de Paquita</h1>
+</header>
 
-  <header class="text-center">
-    <img src="assets/img/cooking-pot-icon.jpg" class="rounded" alt="...">
-    <h1 class="pt-2">El recetario de Paquita</h1>
-  </header>
+<div class="container mt-3">
+  <div class="row justify-content-md-center">
+    <div class="col col-md-8 col-lg-6 col-xl-6">
 
-  <div class="container mt-3">
-      <div class="row justify-content-md-center">
-        <div class="col col-md-8 col-lg-6 col-xl-6">
-            <nav class="input-group">
-                <input 
-                  type="text" 
-                  class="form-control" 
-                  placeholder="Search recipe..." 
-                  aria-label="Default" 
-                  aria-describedby="inputGroup-sizing-default"
-                  [(ngModel)]="recipeQuery"
-                  >
-              </nav>
-        </div>
-      </div>
+      <form class="input-group" [formGroup]="recipeSearchGroup" (ngSubmit)="onSubmit()">
+
+        <input 
+          type="text" 
+          class="form-control"
+          placeholder="Search recipe..." 
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default" 
+          formControlName="recipeQuery">
+      </form>
 
     </div>
+  </div>
 
-
+</div>

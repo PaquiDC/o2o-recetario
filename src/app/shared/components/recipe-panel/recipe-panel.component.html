@@ -1,10 +1,10 @@
-<div *ngIf="recipes.length === 0" class="pt-3 text-center">
+<div *ngIf="areThereRecipes()" class="pt-3 text-center">
     <h4>Recipe not found</h4>
 </div>
 
 <div *ngFor="let recipe of recipes">
 
-    <app-recipe-card recipe="recipe"></app-recipe-card>
+    <app-recipe-card [recipe]="recipe"></app-recipe-card>
 
 </div>
 
