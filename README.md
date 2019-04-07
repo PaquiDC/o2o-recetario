@@ -8,14 +8,14 @@ Paqui Díaz
 
 ## USO
 
-`git clone https://github.com/PaquiDC/o2o-recetario.git`
-`cd o2o-recetario`
-`npm i`
-`npm start`
+`git clone https://github.com/PaquiDC/o2o-recetario.git` .
+`cd o2o-recetario` .
+`npm i` .
+`npm start` .
 
 ## Proxy
 
-We use a proxy to access API http://www.recipepuppy.com/api/ because they has cross origin
+We use a proxy to access API http://www.recipepuppy.com/api/ because they has cross origin.
 `npm start` -> `"start": "ng serve --proxy-config proxy.conf.json"`
 
 ## Development server
