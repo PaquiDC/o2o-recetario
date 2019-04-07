@@ -1,9 +1,9 @@
-<div *ngIf="areThereRecipes()" class="pt-3 text-center">
+<div *ngIf="!isSearching && areNotThereRecipes()" class="pt-3 text-center">
     <h4>Recipe not found</h4>
 </div>
 
 
-<div class="card-columns">
+<div *ngIf="!isSearching" class="card-columns">
 
     <div *ngFor="let recipe of recipes">
 
@@ -14,7 +14,7 @@
 </div>
 
 
-<div *ngIf="isSearching" class="d-flex justify-content-center">
+<div *ngIf="isSearching" class="mt-5 d-flex justify-content-center">
     <div class="spinner-border text-danger" role="status">
         <span class="sr-only">Loading...</span>
     </div>

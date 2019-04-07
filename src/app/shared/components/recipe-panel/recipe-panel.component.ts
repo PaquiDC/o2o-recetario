@@ -11,13 +11,13 @@ export class RecipePanelComponent implements OnInit {
 
   @Input() recipes: Recipe[] = [];
 
-  isSearching: boolean = false;
+  @Input() isSearching: boolean = false;
 
   constructor() { }
 
   ngOnInit() { }
 
-  areThereRecipes(): boolean {
+  areNotThereRecipes(): boolean {
     return isNullOrUndefined(this.recipes) || this.recipes.length === 0;
   }
 }

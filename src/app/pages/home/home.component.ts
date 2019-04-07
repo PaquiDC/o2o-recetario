@@ -14,14 +14,19 @@ export class HomeComponent implements OnInit {
   recipes: Recipe[];
   defaultQuery = 'spanish omelet';
 
+  isSearching: boolean = false;
+
   constructor(private recipeService: RecipeService) {
     
   }
 
   ngOnInit() {
 
+    this.isSearching = true;
+
     this.recipeService.findByQuery(this.defaultQuery)
     .then((resp: RecipesResp) => {
+      this.isSearching = false;
       this.recipes = resp.results;
     })
     .catch(err => console.log(err));
@@ -30,8 +35,12 @@ export class HomeComponent implements OnInit {
 
 
   inputRecipe(recipeQuery: string) {
+
+    this.isSearching = true;
+
     this.recipeService.findByQuery(recipeQuery)
     .then((resp: RecipesResp) => {
+      this.isSearching = false;
       this.recipes = resp.results;
     })
     .catch(err => console.log(err));

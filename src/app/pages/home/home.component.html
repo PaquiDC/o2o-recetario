@@ -2,6 +2,6 @@
 <div class="container pt-3 mt-3">
     <app-searcher (inputQuery)="inputRecipe($event)"></app-searcher>
     <hr>
-    <app-recipe-panel [recipes]='recipes'></app-recipe-panel>
+    <app-recipe-panel [recipes]='recipes' [isSearching]="isSearching"></app-recipe-panel>
 </div>
 
